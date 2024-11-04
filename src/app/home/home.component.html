@@ -1,0 +1,24 @@
+<div class="container my-4">
+  <h2 class="text-center">Bikes in Spotlight</h2>
+
+  <div class="row my-4">
+    <div *ngFor="let bike of bikes; let i = index" class="col-md-4 mb-4">
+      <div class="card">
+        <img [src]="bike.imageUrl" class="card-img-top" alt="{{ bike.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ bike.name }}</h5>
+          <p class="card-text">{{ bike.description }}</p>
+          <p class="mileage">Mileage: {{ bike.mileage }}</p>
+          <p class="engine">Engine: {{ bike.engine }}</p>
+          <p class="rating">Rating: {{ bike.rating }} ⭐</p>
+
+          <!-- Button Container for Edit and Delete buttons -->
+          <div class="btn-container">
+            <button class="btn btn-warning" (click)="editBike(bike.id)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteBike(i)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

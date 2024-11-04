@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from './footer/footer.component'; 
+import { RouterLink, RouterModule } from '@angular/router';
+import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from "./register/register.component";
+import { BikeDetailComponent } from './bike-detail/bike-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
+  standalone: true, 
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [FooterComponent,RouterLink, RouterModule, HomeComponent, BikeDetailComponent, LoginComponent,RegisterComponent] 
+ 
 })
 export class AppComponent {
-  title = 'BikeWebsite';
+  title: any;
 }

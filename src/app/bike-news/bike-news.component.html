@@ -1,0 +1,437 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Descriptions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .search-container,
+    .add-bike-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .search-container input,
+    .add-bike-container input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+      flex: 1;
+    }
+    .add-bike-container input {
+      max-width: 250px;
+    }
+    .search-container button,
+    .add-bike-container button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-container button:hover,
+    .add-bike-container button:hover {
+      background-color: #0056b3;
+    }
+    .bike-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .bike-section img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .description {
+      text-align: center;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+  <script>
+    function searchBikes() {
+      const input = document.getElementById('search-input').value.toLowerCase();
+      const bikeSections = document.querySelectorAll('.bike-section');
+
+      bikeSections.forEach(section => {
+        const bikeName = section.querySelector('.bike-name').innerText.toLowerCase();
+        if (bikeName.includes(input)) {
+          section.style.display = 'flex';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+
+    function addBike() {
+      const name = document.getElementById('bike-name').value;
+      const description = document.getElementById('bike-description').value;
+      const imageUrl = document.getElementById('bike-image-url').value;
+
+      if (!name || !description || !imageUrl) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Create new bike section
+      const bikeSection = document.createElement('div');
+      bikeSection.classList.add('bike-section');
+      bikeSection.innerHTML = `
+        <img src="${imageUrl}" alt="${name}">
+        <p class="description">
+          <strong class="bike-name">${name}</strong>: ${description}
+        </p>
+      `;
+
+      // Add the new bike section to the container
+      document.getElementById('bike-list').appendChild(bikeSection);
+
+      // Clear form inputs
+      document.getElementById('bike-name').value = '';
+      document.getElementById('bike-description').value = '';
+      document.getElementById('bike-image-url').value = '';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">Bike Descriptions</h1>
+
+    
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for a bike..." />
+      <button onclick="searchBikes()">Search</button>
+    </div>
+
+   
+    <div class="bike-section">
+      <img src="app/assets/images/Yamaha.png" alt="Yamaha MT 15 V2.0">
+      <p class="description">
+        <strong>Yamaha MT 15 V2.0</strong>: The Yamaha MT-15 V2.0 is a highly acclaimed street bike designed with agility, power, and style, making it ideal for urban environments and spirited rides. It belongs to Yamaha's MT (Master of Torque) series, known for a balance of compact, aggressive designs and responsive performance.
+      </p>
+    </div>
+
+
+    <div class="bike-section">
+      <img src="app/assets/images/Royal.png" alt="Royal Enfield Classic 350">
+      <p class="description">
+        <strong>Royal Enfield Classic 350</strong>: Blending classic design with modern technology, the Royal Enfield Classic 350 is an iconic choice that delivers smooth handling and reliable performance on any terrain.
+      </p>
+    </div>
+
+   
+    <div class="bike-section">
+      <img src="app/assets/images/Honda.png" alt="Honda SP 125">
+      <p class="description">
+        <strong>Honda SP 125</strong>: Perfect for daily commuting, this bike combines a sporty look with impressive fuel efficiency, making it ideal for both style-conscious and budget-conscious riders.
+      </p>
+    </div>
+
+    
+    <div class="bike-section">
+      <img src="app/assets/images/Hero.png" alt="Hero Splendor Plus">
+      <p class="description">
+        <strong>Hero Splendor Plus</strong>: Known for its outstanding fuel efficiency and durability, this bike is perfect for city commutes, offering a comfortable ride with minimal maintenance requirements.
+      </p>
+    </div>
+
+   
+    <div class="bike-section">
+      <img src="app/assets/images/Suziki.png" alt="Suzuki Gixxer">
+      <p class="description">
+        <strong>Suzuki Gixxer</strong>: A stylish and sporty bike designed for performance, the Suzuki Gixxer comes with a powerful 155cc engine, ideal for those who crave speed and agility.
+      </p>
+    </div>
+
+    <div class="bike-section">
+        <img src="app/assets/images/Ktm.png" alt="KTM RC 200">
+        <p class="description">
+          <strong>KTM RC 200</strong>: The KTM RC 200 is a true racer, designed to deliver thrills on the track and excitement on the road. Its sharp styling, sporty stance, and lightweight frame make it ideal for riders looking for an adrenaline-fueled experience.
+        </p>
+      </div>
+
+      <div class="bike-section">
+        <img src="app/assets/images/Kawasaki.png" alt="Kawasaki Ninja 300">
+        <p class="description">
+          <strong>Kawasaki Ninja 300</strong>: The Kawasaki Ninja 300 combines power and performance, offering an exhilarating ride. With its aerodynamic design and powerful engine, it’s built for speed, ensuring it stands out both on city streets and open highways.
+        </p>
+      </div>
+
+      <div class="bike-section">
+        <img src="app/assets/images/Pulsar.png" alt="Bajaj Pulsar 220F">
+        <p class="description">
+          <strong>Bajaj Pulsar 220F</strong>: Known for its combination of style, performance, and comfort, the Bajaj Pulsar 220F is a versatile bike that caters to both city commutes and long rides. Its powerful engine and ergonomic design make it a popular choice among riders.
+        </p>
+      </div>
+
+      <div class="bike-section">
+        <img src="app/assets/images/Apache.png" alt="TVS Apache RR 310">
+        <p class="description">
+          <strong>TVS Apache RR 310</strong>: With superior handling and advanced technology, the TVS Apache RR 310 is a performance-oriented bike that offers an impressive blend of power and control. It’s engineered for riders seeking a balance of thrill and sophistication.
+        </p>
+      </div>
+
+      <div class="bike-section">
+        <img src="app/assets/images/Hondacb350.png" alt="Honda CB350">
+        <p class="description">
+          <strong>Honda CB350</strong>: The Honda CB350 marries classic design with modern features. It’s a bike that appeals to enthusiasts who value heritage and style but do not want to compromise on the latest technology.
+        </p>
+      </div>
+
+      <div class="bike-section">
+        <img src="app/assets/images/Benelli.png" alt="Benelli 502C">
+        <p class="description">
+          <strong>Benelli 502C</strong>: The Benelli 502C is a stylish cruiser, designed to stand out on the road. Its powerful engine and unique cruiser style offer a premium riding experience that makes it ideal for both city and highway journeys.
+        </p>
+      </div>
+
+  </div>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Descriptions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .search-container,
+    .add-bike-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .search-container input,
+    .add-bike-container input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+      flex: 1;
+    }
+    .add-bike-container input {
+      max-width: 250px;
+    }
+    .search-container button,
+    .add-bike-container button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .search-container button:hover,
+    .add-bike-container button:hover {
+      background-color: #0056b3;
+    }
+    .bike-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .bike-section img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .description {
+      text-align: center;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+  <script>
+    function searchBikes() {
+      const input = document.getElementById('search-input').value.toLowerCase();
+      const bikeSections = document.querySelectorAll('.bike-section');
+
+      bikeSections.forEach(section => {
+        const bikeName = section.querySelector('.bike-name').innerText.toLowerCase();
+        if (bikeName.includes(input)) {
+          section.style.display = 'flex';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+
+    function addBike() {
+      const name = document.getElementById('bike-name').value;
+      const description = document.getElementById('bike-description').value;
+      const imageUrl = document.getElementById('bike-image-url').value;
+
+      if (!name || !description || !imageUrl) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      // Create new bike section
+      const bikeSection = document.createElement('div');
+      bikeSection.classList.add('bike-section');
+      bikeSection.innerHTML = `
+        <img src="${imageUrl}" alt="${name}">
+        <p class="description">
+          <strong class="bike-name">${name}</strong>: ${description}
+        </p>
+      `;
+
+      // Add the new bike section to the container
+      document.getElementById('bike-list').appendChild(bikeSection);
+
+      // Clear form inputs
+      document.getElementById('bike-name').value = '';
+      document.getElementById('bike-description').value = '';
+      document.getElementById('bike-image-url').value = '';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align: center;">Bike Descriptions</h1>
+
+    
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search for a bike..." />
+      <button onclick="searchBikes()">Search</button>
+    </div>
+
+   
+    <div class="add-bike-container">
+      <input type="text" id="bike-name" placeholder="Bike Name" />
+      <input type="text" id="bike-description" placeholder="Bike Description" />
+      <input type="text" id="bike-image-url" placeholder="Image URL" />
+      <button onclick="addBike()">Add Bike</button>
+    </div>
+
+   
+    <div id="bike-list">
+      <div class="bike-section">
+        <img src="app/assets/images/Yamaha.png" alt="Yamaha MT 15 V2.0">
+        <p class="description">
+          <strong class="bike-name">Yamaha MT 15 V2.0</strong>: The Yamaha MT-15 V2.0 is a highly acclaimed street bike designed with agility, power, and style, making it ideal for urban environments and spirited rides. It belongs to Yamaha's MT (Master of Torque) series, known for a balance of compact, aggressive designs and responsive performance.
+        </p>
+      </div>
+      
+      <div class="bike-section">
+        <img src="app/assets/images/Royal.png" alt="Royal Enfield Classic 350">
+        <p class="description">
+          <strong>Royal Enfield Classic 350</strong>: Blending classic design with modern technology, the Royal Enfield Classic 350 is an iconic choice that delivers smooth handling and reliable performance on any terrain.
+        </p>
+      </div>
+  
+     
+      <div class="bike-section">
+        <img src="app/assets/images/Honda.png" alt="Honda SP 125">
+        <p class="description">
+          <strong>Honda SP 125</strong>: Perfect for daily commuting, this bike combines a sporty look with impressive fuel efficiency, making it ideal for both style-conscious and budget-conscious riders.
+        </p>
+      </div>
+  
+      
+      <div class="bike-section">
+        <img src="app/assets/images/Hero.png" alt="Hero Splendor Plus">
+        <p class="description">
+          <strong>Hero Splendor Plus</strong>: Known for its outstanding fuel efficiency and durability, this bike is perfect for city commutes, offering a comfortable ride with minimal maintenance requirements.
+        </p>
+      </div>
+  
+     
+      <div class="bike-section">
+        <img src="app/assets/images/Suziki.png" alt="Suzuki Gixxer">
+        <p class="description">
+          <strong>Suzuki Gixxer</strong>: A stylish and sporty bike designed for performance, the Suzuki Gixxer comes with a powerful 155cc engine, ideal for those who crave speed and agility.
+        </p>
+      </div>
+  
+      <div class="bike-section">
+          <img src="app/assets/images/Ktm.png" alt="KTM RC 200">
+          <p class="description">
+            <strong>KTM RC 200</strong>: The KTM RC 200 is a true racer, designed to deliver thrills on the track and excitement on the road. Its sharp styling, sporty stance, and lightweight frame make it ideal for riders looking for an adrenaline-fueled experience.
+          </p>
+        </div>
+  
+        <div class="bike-section">
+          <img src="app/assets/images/Kawasaki.png" alt="Kawasaki Ninja 300">
+          <p class="description">
+            <strong>Kawasaki Ninja 300</strong>: The Kawasaki Ninja 300 combines power and performance, offering an exhilarating ride. With its aerodynamic design and powerful engine, it’s built for speed, ensuring it stands out both on city streets and open highways.
+          </p>
+        </div>
+  
+        <div class="bike-section">
+          <img src="app/assets/images/Pulsar.png" alt="Bajaj Pulsar 220F">
+          <p class="description">
+            <strong>Bajaj Pulsar 220F</strong>: Known for its combination of style, performance, and comfort, the Bajaj Pulsar 220F is a versatile bike that caters to both city commutes and long rides. Its powerful engine and ergonomic design make it a popular choice among riders.
+          </p>
+        </div>
+  
+        <div class="bike-section">
+          <img src="app/assets/images/Apache.png" alt="TVS Apache RR 310">
+          <p class="description">
+            <strong>TVS Apache RR 310</strong>: With superior handling and advanced technology, the TVS Apache RR 310 is a performance-oriented bike that offers an impressive blend of power and control. It’s engineered for riders seeking a balance of thrill and sophistication.
+          </p>
+        </div>
+  
+        <div class="bike-section">
+          <img src="app/assets/images/Hondacb350.png" alt="Honda CB350">
+          <p class="description">
+            <strong>Honda CB350</strong>: The Honda CB350 marries classic design with modern features. It’s a bike that appeals to enthusiasts who value heritage and style but do not want to compromise on the latest technology.
+          </p>
+        </div>
+  
+        <div class="bike-section">
+          <img src="app/assets/images/Benelli.png" alt="Benelli 502C">
+          <p class="description">
+            <strong>Benelli 502C</strong>: The Benelli 502C is a stylish cruiser, designed to stand out on the road. Its powerful engine and unique cruiser style offer a premium riding experience that makes it ideal for both city and highway journeys.
+          </p>
+        </div>
+  
+      
+    </div>
+  </div>
+</body>
+</html>
+

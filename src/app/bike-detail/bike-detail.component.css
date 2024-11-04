@@ -1,0 +1,35 @@
+/* Bike Detail component styles */
+
+h3 {
+    color: #007bff;
+  }
+  
+  .bike-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bike-image {
+    max-width: 400px;
+    max-height: 300px;
+    margin-right: 20px;
+  }
+  
+  .bike-info {
+    flex: 1;
+  }
+  
+  .bike-info h4 {
+    margin-top: 0;
+  }
+  
+  .price {
+    font-size: 24px;
+    color: #28a745;
+  }
+  
+  .rating {
+    color: #ffcc00; /* Gold color for rating stars */
+  }
+  

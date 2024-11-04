@@ -1,0 +1,21 @@
+<div class="home">
+  <h2>Bikes Overview</h2>
+
+  <div *ngFor="let category of bikeCategories" class="bike-category">
+    <h3>{{ category.name }}</h3>
+    
+    <div class="bike-list">
+      <div *ngFor="let bike of category.bikes" class="col-md-4 mb-4">
+        <div class="card">
+          <img [src]="bike.imageUrl" alt="{{ bike.name }}" />
+          <h4>{{ bike.name }}</h4>
+          <p class="price">Price: {{ bike.price }}</p>
+          <p class="mileage">Mileage: {{ bike.mileage }}</p>
+          <p class="engine">Engine: {{ bike.engine }}</p>
+          <p class="rating">Rating: {{ bike.rating }} ⭐</p>
+          <button [routerLink]="['/bike', bike.name]">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
